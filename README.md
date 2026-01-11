@@ -18,3 +18,15 @@ The expected outcome is a program that:
 - Outputs a **new processed image**
 
 The project will demonstrate the **performance advantages of GPU acceleration** over CPU processing, potentially achieving much faster execution times.
+
+
+## Example input
+
+![Result Image]("images/input copy.jpg")
+
+## Logo
+![Result Image]("images/Abo.png")
+
+## Example Output
+
+![Result Image]("images/output_gpu.png")
