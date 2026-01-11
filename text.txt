@@ -1,0 +1,56 @@
+===============================================
+1. Technology Stack
+===============================================
+CUDA (GPU acceleration)
+C++
+OpenCV (image loading/saving & text rendering)
+Platform: Linux / Windows with NVIDIA GPU
+
+===============================================
+2. Application Workflow
+===============================================
+Load base image
+Load logo image (with alpha channel)
+Render title + date into a transparent overlay
+Copy images to GPU
+CUDA kernel blends logo + text overlay pixel-by-pixel
+Output final image
+Measure CPU vs GPU execution time
+
+
+
+
+
+===============================================
+5. Compile & Run
+===============================================
+Compile
+nvcc main.cpp overlay.cu -o gpu_overlay `pkg-config --cflags --libs opencv4`
+Run
+./gpu_overlay
+
+===============================================
+7. Expected Output
+===============================================
+output_gpu.png with:
+Logo (top-left)
+Title text
+Date stamp
+GPU version runs 10–50× faster for large images
+
+
+nvcc main.cu -I"C:\Program Files\opencv\build\include" -L"C:\Program Files\opencv\build\x64\vc16\lib" -lopencv_world490 -o overlay.exe -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+
+
+
+nvcc -c main.cu    -o main.obj    -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+nvcc -c kernel.cu  -o kernel.obj  -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+nvcc -c support.cu -o support.obj -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+
+nvcc main.obj support.obj -o convolution.exe -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+
+
+nvcc main.cu -I"C:\Program Files\opencv\build\include" -L"C:\Program Files\opencv\build\x64\vc16\lib" -lopencv_world480 -o overlay.exe -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
+
+
+nvcc main.cu -I"C:\Program Files\opencv\build\include" -L"C:\Program Files\opencv\build\x64\vc16\lib" -lopencv_world480 -o overlay.exe -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64"
