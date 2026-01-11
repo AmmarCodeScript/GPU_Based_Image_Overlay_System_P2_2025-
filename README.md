@@ -21,12 +21,12 @@ The project will demonstrate the **performance advantages of GPU acceleration** 
 
 
 ## Example input
-
-![Result Image]("images/input copy.jpg")
+![Input Image](images/input_copy.jpg)
 
 ## Logo
-![Result Image]("images/Abo.png")
+![Logo](images/Abo.png)
 
 ## Example Output
+![Output Image](images/output_gpu.png)
 
-![Result Image]("images/output_gpu.png")
+
