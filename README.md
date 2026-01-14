@@ -21,7 +21,8 @@ The project will demonstrate the **performance advantages of GPU acceleration** 
 
 
 ## Example input
-![Input Image](images/input_copy.jpg)
+<!-- ![Input Image](images/input_copy.jpg) -->
+<img src="images/input_copy.jpg">
 
 ## Logo
 <img src="images/Abo_Red.png" width="150">
